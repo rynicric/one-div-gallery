@@ -1,0 +1,48 @@
+.bubble-loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-image: linear-gradient(45deg, #0e0e2e, #404071);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 3px 2px 1px #00000033;
+}
+
+.bubble-loading::before,
+.bubble-loading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  margin-left: -20px;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #3395e6;
+  transform: translateY(-2px);
+  z-index: -1;
+}
+
+.bubble-loading::before {
+  animation: bubble-rotate infinite 3s linear;
+}
+
+.bubble-loading::after {
+  animation: bubble-rotate infinite 2s linear;
+}
+
+@keyframes bubble-rotate {
+  0% {
+    transform: rotate(0deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(360deg) translateY(-2px);
+  }
+}

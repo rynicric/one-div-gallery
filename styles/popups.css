@@ -1,0 +1,35 @@
+.popups {
+  position: relative;
+  border-radius: 4px;
+  margin-top: -5px;
+  padding: 5px 8px;
+  min-width: 40px;
+  background-image: linear-gradient(to top, green, #38b138);
+  /* background-color: #268d26; */
+  color: white;
+  font-size: 8px;
+  filter: drop-shadow(0 1px 1px #014700);
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: popups-rise infinite 4s ease;
+}
+
+.popups::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  border: 5px solid transparent;
+  border-top-color: green;
+}
+
+@keyframes popups-rise {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0;
+  }
+}
